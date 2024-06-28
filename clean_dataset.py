@@ -18,6 +18,7 @@ print(gdf)
 lbl = gdf.dissolve(by='LAD22NM')                                                     
 print(lbl)
 #%%
+lbl.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(lbl)
 asset.output_static_files(Path('council boundary/geojson/lewisham.geojson'), bypass=True)
@@ -33,7 +34,7 @@ for ward in list(gdf['WD22NM'].unique()):
 
 ward_geo = pd.concat(wards)
 ward_geo = gpd.GeoDataFrame(ward_geo, geometry='geometry')
-
+ward_geo.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(ward_geo)
 asset.output_static_files(Path(f'ward boundaries/geojsons/wards_2022.geojson'), bypass=True)
@@ -50,7 +51,7 @@ lsoa_poly = lsoas_gdf.dissolve(by='LSOA21NM')
 #%%
 print(lsoa_poly.crs)
 print(lsoa_poly)
-
+lsoa_poly.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(lsoa_poly)
 
@@ -69,7 +70,7 @@ oa_poly = oas_gdf.dissolve(by='OA21CD')
 #%%
 print(oa_poly.crs)
 print(oa_poly)
-
+oa_poly.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(oa_poly)
 
@@ -83,6 +84,7 @@ asset.output_static_files(Path(f'oa boundaries/json/oas.json'))
 lbl_oas = raw.joinpath('Lewisham 2011 OAs/OA 2011.shp')
 oas_gdf = gpd.read_file(lbl_oas)
 oa_poly = oas_gdf.dissolve(by='OA11CD')
+oa_poly.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(oa_poly)
 
@@ -101,7 +103,7 @@ lsoa_poly = lsoas_gdf.dissolve(by='LSOA11NM')
 #%%
 print(lsoa_poly.crs)
 print(lsoa_poly)
-
+lsoa_poly.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(lsoa_poly)
 
@@ -119,7 +121,7 @@ msoa_poly_2011 = msoas__2011_gdf.dissolve(by='MSOA11NM')
 #%%
 print(msoa_poly_2011.crs)
 print(msoa_poly_2011)
-
+msoa_poly_2011.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(msoa_poly_2011)
 
@@ -137,7 +139,7 @@ msoa_poly = msoas_gdf.dissolve(by='MSOA21NM')
 #%%
 print(msoa_poly.crs)
 print(msoa_poly)
-
+msoa_poly.reset_index(inplace=True)
 asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(msoa_poly)
 
