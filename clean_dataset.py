@@ -22,6 +22,8 @@ asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(lbl)
 asset.output_static_files(Path('council boundary/geojson/lewisham.geojson'), bypass=True)
 asset.output_static_files(Path('council boundary/shapefile/lewisham.shp'))
+asset.output_static_files(Path('council boundary/json/lewisham.json'), bypass=True)
+
 # %%
 wards = []
 for ward in list(gdf['WD22NM'].unique()):
@@ -36,6 +38,8 @@ asset = CreateAssets(static_asset_path=static_asset_path)
 asset.assets_from_geopandas(ward_poly)
 asset.output_static_files(Path(f'ward boundaries/geojsons/wards_2022.geojson'), bypass=True)
 asset.output_static_files(Path(f'ward boundaries/shapefiles/wards_2022.shp'))
+asset.output_static_files(Path(f'ward boundaries/json/wards_2022.json'))
+
 # %%
 
 
@@ -53,6 +57,7 @@ asset.assets_from_geopandas(lsoa_poly)
 asset.output_static_files(Path(f'lsoa boundaries/geojsons/lsoas.geojson'), bypass=True)
 
 asset.output_static_files(Path(f'lsoa boundaries/shapefiles/lsoas.shp'))
+asset.output_static_files(Path(f'lsoa boundaries/json/lsoas.json'))
 
 
 # %%
@@ -71,6 +76,8 @@ asset.assets_from_geopandas(oa_poly)
 asset.output_static_files(Path(f'oa boundaries/geojsons/oas.geojson'), bypass=True)
 
 asset.output_static_files(Path(f'oa boundaries/shapefiles/oas.shp'))
+asset.output_static_files(Path(f'oa boundaries/json/oas.json'))
+
 # %%
 
 lbl_oas = raw.joinpath('Lewisham 2011 OAs/OA 2011.shp')
@@ -82,6 +89,8 @@ asset.assets_from_geopandas(oa_poly)
 asset.output_static_files(Path(f'oa 2011 boundaries/geojsons/oas.geojson'), bypass=True)
 
 asset.output_static_files(Path(f'oa 2011 boundaries/shapefiles/oas.shp'))
+asset.output_static_files(Path(f'oa 2011 boundaries/json/oas.json'))
+
 # %%
 
 
@@ -99,6 +108,8 @@ asset.assets_from_geopandas(lsoa_poly)
 asset.output_static_files(Path(f'lsoa 2011 boundaries/geojsons/lsoas.geojson'), bypass=True)
 
 asset.output_static_files(Path(f'lsoa 2011 boundaries/shapefiles/lsoas.shp'))
+asset.output_static_files(Path(f'lsoa 2011 boundaries/json/lsoas.json'))
+
 # %%
 
 lbl_msoas_2011 = raw.joinpath('Lewisham 2011 MSOAs/MSOA_2011_EW_BFC_V3.shp')
@@ -115,6 +126,9 @@ asset.assets_from_geopandas(msoa_poly_2011)
 asset.output_static_files(Path(f'msoa 2011 boundaries/geojsons/msoas.geojson'), bypass=True)
 
 asset.output_static_files(Path(f'msoa 2011 boundaries/shapefiles/msoas.shp'))
+
+asset.output_static_files(Path(f'msoa 2011 boundaries/json/msoas.json'))
+
 # %%
 lbl_msoas = raw.joinpath('Lewisham MSOAs/MSOA_2021_EW_BFC_V6.shp')
 msoas_gdf = gpd.read_file(lbl_msoas)
@@ -129,5 +143,6 @@ asset.assets_from_geopandas(msoa_poly)
 
 asset.output_static_files(Path(f'msoa boundaries/geojsons/msoas.geojson'), bypass=True)
 
-asset.output_static_files(Path(f'msoa boundaries/shapefiles/msoas.shp'))
-# %%
+asset.output_static_files(Path(f'msoa boundaries/json/msoas.json'))
+
+#%%

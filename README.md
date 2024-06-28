@@ -24,34 +24,42 @@ Folder Organization
         ├── epsg_3857                           <- EPSG:3857 projections under this folder.
         │     ├── council boundary              <- Council boundary polygons.
         │     │    ├── geojson                  <- Lewisham boundary as a geojson.
+        │     │    ├── json                     <- Lewisham boundary as a json.
         │     │    └── shapefile                <- Lewisham boundary as a shapefile.
         │     │
         │     ├── msoa boundaries               <- MSOA boundary polygons.
         │     │    ├── geojson                  <- MSOA boundaries as a geojson.
+        │     │    ├── json                     <- MSOA boundaries as a json.
         │     │    └── shapefile                <- MSOA boundaries as a shapefile.
         │     │
         │     ├── msoa 2011 boundaries          <- MSOA 2011 boundary polygons.
         │     │    ├── geojson                  <- MSOA 2011 boundaries as a geojson.
+        │     │    ├── json                     <- MSOA 2011 boundaries as a json.
         │     │    └── shapefile                <- MSOA 2011 boundaries as a shapefile.
         │     │
         │     ├── lsoa boundaries               <- LSOA boundary polygons.
         │     │    ├── geojson                  <- LSOA boundaries as a geojson.
+        │     │    ├── json                     <- LSOA boundaries as a json.
         │     │    └── shapefile                <- LSOA boundaries as a shapefile.
         │     │
         │     ├── lsoa 2011 boundaries          <- LSOA 2011 boundary polygons.
         │     │    ├── geojson                  <- LSOA 2011 boundaries as a geojson.
+        │     │    ├── json                     <- LSOA 2011 boundaries as a json.
         │     │    └── shapefile                <- LSOA 2011 boundaries as a shapefile.
         │     │
         │     ├── oa boundaries                 <- OA boundary polygons.
         │     │    ├── geojson                  <- OA boundaries as a geojson.
+        │     │    ├── json                     <- OA boundaries as a json.
         │     │    └── shapefile                <- OA boundaries as a shapefile.
         │     │
         │     ├── oa 2011 boundaries            <- OA 2011 boundary polygons.
         │     │    ├── geojson                  <- OA 2011boundaries as a geojson.
+        │     │    ├── json                     <- OA 2011boundaries as a json.
         │     │    └── shapefile                <- OA 2011 boundaries as a shapefile.
         │     │
         │     └── ward boundaries               <- Ward boundary polygons.
-        │            ├── geojsons               <- Ward boundaries as geojsons.
+        │            ├── geojson                <- Ward boundaries as geojson.
+        │            ├── json                   <- Ward boundaries as json.
         │            └── shapefiles             <- Ward boundaries as shapefiles.
         │
         ├── epsg_4326                           <- As above, but for EPSG:4326 projection.
