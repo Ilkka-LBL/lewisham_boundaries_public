@@ -35,7 +35,7 @@ ward_geo = pd.concat(wards)
 ward_geo = gpd.GeoDataFrame(ward_geo, geometry='geometry')
 
 asset = CreateAssets(static_asset_path=static_asset_path)
-asset.assets_from_geopandas(ward_poly)
+asset.assets_from_geopandas(ward_geo)
 asset.output_static_files(Path(f'ward boundaries/geojsons/wards_2022.geojson'), bypass=True)
 asset.output_static_files(Path(f'ward boundaries/shapefiles/wards_2022.shp'))
 asset.output_static_files(Path(f'ward boundaries/json/wards_2022.json'))
